@@ -5,9 +5,44 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  #root {
+    margin: auto;
+    background-color: #fff;
+  }
+}
+
+a {
+  color: #000;
+}
+
+li {
+  list-style: none;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* 双伪元素清除浮动 */
+.clearfix::before,
+.clearfix::after {
+
+  content: "";
+
+  display: table;
+
+}
+
+.clearfix::after {
+
+  clear: both;
+
+}
+
+.clearfix {
+
+  *zoom: 1;
+
 }

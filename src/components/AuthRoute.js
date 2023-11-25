@@ -12,3 +12,5 @@ function AuthRoute({ children }) {
     return <Navigate to={'/login'} replace />
   }
 }
+
+export default AuthRoute

@@ -3,10 +3,12 @@
 
 import { request } from "./request"
 import { getToken, setToken, removeToken } from './token'
+import { barnerImagesData3 } from "./scenery"
 
 export {
   request,
   getToken,
   setToken,
-  removeToken
+  removeToken,
+  barnerImagesData3
 }
