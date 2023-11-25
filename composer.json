@@ -1,0 +1,8 @@
+{
+  "config": {
+    "disable-tls": true
+  },
+  "require": {
+    "firebase/php-jwt": "^5.4"
+  }
+}
