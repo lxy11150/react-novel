@@ -11,6 +11,7 @@ const UserInfo = ({ username }) => {
 
   const confirm = () => {
     dispatch(clearUserInfo())
+    sessionStorage.clear()
     navigate('/login')
     message.success('你已退出登录');
   }
@@ -50,6 +51,7 @@ const UserInfo = ({ username }) => {
         cancelText="否"
       >
         <Link style={style}
+          onClick={(e) => e.preventDefault()}
           onMouseEnter={(e) => e.target.style.backgroundColor = '#e2e2e2'}
           onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
         ><PoweroffOutlined style={icon} />退出登录</Link>

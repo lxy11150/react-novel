@@ -1,0 +1,178 @@
+.rank_list {
+  height: 510px;
+  width: 300px;
+  padding-top: 82px;
+  margin-bottom: 30px;
+  background: #fff;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 2px 11px 0 rgba(74, 112, 183, .21);
+
+  .ellipsis {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .global:hover {
+    span {
+      color: #e60000;
+      cursor: pointer;
+    }
+  }
+
+  .rank_list_info {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    line-height: 33px;
+    margin-bottom: 7px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0 24px;
+
+    .info_num {
+      cursor: default;
+
+      img {
+        height: 32px;
+        width: 32px;
+      }
+
+      .num {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        margin: 6px 6px 0;
+        text-align: center;
+        border-radius: 50%;
+        background: #E8E8E8;
+        color: #666;
+        font-weight: 600
+      }
+    }
+
+    .info_title {
+      display: flex;
+      flex: 1;
+      justify-content: space-between;
+
+      .title_text {
+        width: 140px;
+        text-align: left;
+        padding-left: 10px;
+      }
+
+      .title_default {
+        color: #999;
+        font-size: 14px;
+      }
+    }
+
+    .info_box {
+      display: flex;
+      justify-content: space-between;
+      text-align: left;
+
+      .box_title {
+        flex-direction: column;
+        width: 132px;
+        padding-left: 10px;
+
+        .title_content {
+          display: flex;
+          flex-direction: column;
+          font-size: 12px;
+          line-height: 20px;
+          color: #999;
+          cursor: default;
+        }
+      }
+
+      //封面背景
+      .book_frame {
+        height: 100%;
+        width: 100%;
+        background-image: url('../../assets/cover.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        position: relative; //防止底部阴影在上面
+        z-index: 5;
+      }
+
+      .global_radius {
+        border-radius: 4px !important;
+        overflow: hidden !important;
+      }
+
+      .box_img {
+        position: relative;
+        background-color: #fff;
+        height: 68px;
+        width: 51px;
+        margin-right: 10px;
+
+        .img_container {
+          height: 100%;
+          width: 100%;
+          box-shadow: inset 0 0 1px 0 rgba(0, 0, 0, .1);
+
+          img {
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+            -webkit-transition: all .1s ease-out !important;
+            transition: all .1s cubic-bezier(0, 0.21, 0.58, 1) !important;
+          }
+
+          img:hover {
+            scale: (1.1);
+          }
+        }
+      }
+
+      .img_container::before {
+        background-image: url('../../assets/download.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        border-radius: 4px 0 0 4px;
+        content: "";
+        height: 100%;
+        left: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        width: 5px;
+        z-index: 10;
+      }
+
+      .box_img::after {
+        background-color: #7b7e80;
+        bottom: 0;
+        content: "";
+        filter: blur(9px);
+        height: 70%;
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+        width: 60%;
+      }
+    }
+  }
+
+  .rank_list_more {
+    float: right;
+    border-radius: 0 0 12px 12px;
+    padding-top: 15px;
+
+    span {
+      color: #999;
+      font-size: 14px;
+      margin-right: 10px;
+    }
+  }
+}

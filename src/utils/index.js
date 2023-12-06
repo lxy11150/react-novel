@@ -3,6 +3,7 @@
 
 import { request } from "./request"
 import { getToken, setToken, removeToken } from './token'
+import { setSession, getSession, removeSession } from "./session"
 import { barnerImagesData3 } from "./scenery"
 
 export {
@@ -10,5 +11,8 @@ export {
   getToken,
   setToken,
   removeToken,
+  setSession,
+  getSession,
+  removeSession,
   barnerImagesData3
 }

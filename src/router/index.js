@@ -7,6 +7,9 @@ import Forum from '@/pages/Forum'
 import Books from '@/pages/Books'
 import Home from '@/pages/Home'
 import Register from '@/pages/Register'
+import Detail from '@/pages/Detail'
+import Chapter from '@/pages/Chapter'
+import Searching from '@/pages/Searching'
 
 const router = createBrowserRouter([
   {
@@ -28,6 +31,18 @@ const router = createBrowserRouter([
       {
         path: '/books',
         element: <Books />
+      },
+      {
+        path: '/detail/:id',
+        element: <Detail />
+      },
+      {
+        path: '/chapter/:novelId/:id',
+        element: <Chapter />
+      },
+      {
+        path: '/search',
+        element: <Searching />
       }
     ]
   },

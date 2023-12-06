@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { BarChartOutlined, HomeOutlined, CommentOutlined, ReadOutlined } from '@ant-design/icons'
 import { Menu } from 'antd'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { removeSession } from '@/utils';
 const items = [
   {
     label: '主页',
@@ -32,12 +33,13 @@ const HeaderMenu = () => {
 
   const onClick = (e) => {
     setCurrent(e.key)
+    removeSession('book')
     navigate(e.key)
   }
 
   useEffect(() => {
     setCurrent(location.pathname)
-  }, [])
+  }, [location])
 
   return (
     <div className="header_menu">

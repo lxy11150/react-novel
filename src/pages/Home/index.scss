@@ -1,4 +1,189 @@
 .home {
-  background-color: #fff;
+  display: flex;
+  height: 630px;
+  justify-content: space-between;
+  padding-top: 40px;
+  background-color: #f6f8fa;
   color: #000;
+
+  .home_carousel {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+
+    .carousel {
+      height: 250px;
+
+      a {
+        display: inline-block;
+        height: 250px;
+        width: 500px;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .bc1 {
+        background-image: url('../../assets/novel-1.jpeg');
+      }
+
+      .bc2 {
+        background-image: url('../../assets/novel-2.jpeg');
+      }
+
+      .bc3 {
+        background-image: url('../../assets/novel-3.jpeg');
+      }
+
+      .bc4 {
+        background-image: url('../../assets/novel-4.jpeg');
+      }
+
+    }
+
+    .site_dynamic {
+      height: 240px;
+
+      .site_dynamic_title {
+        display: flex;
+        flex-direction: row;
+        font-size: 20px;
+        font-weight: 400;
+        margin: 0;
+        padding: 80px 0 6px 0;
+      }
+
+      h1::before {
+        background: #25bb9b;
+        content: "";
+        display: inline-block;
+        width: 4px;
+        height: 23px;
+        margin-right: 6px;
+        margin-bottom: 2px;
+        vertical-align: middle;
+      }
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 0;
+        justify-content: space-between;
+        margin: 0;
+
+        li {
+          display: flex;
+          align-items: center; //主轴上居中对齐
+          justify-content: space-between;
+          cursor: pointer;
+          width: 240px;
+          margin-right: 20px;
+          padding: 8px 0;
+          border-bottom: 1px solid #E8E8E8;
+
+          span {
+            font-size: 14px;
+          }
+
+          .trendings {
+            margin: 8px 0;
+            font-size: 14px;
+            text-overflow: ellipsis;
+          }
+
+          img {
+            height: 14px;
+          }
+        }
+
+        li:nth-child(even) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .editor_recommend {
+    width: 401px;
+  }
+
+  .books_rank {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 280px;
+
+    .rank_top {
+      width: 100%;
+      height: 34px;
+
+      h1 {
+        font-size: 20px;
+        color: #ff6666;
+        padding-bottom: 10px;
+        margin: 0;
+        border-bottom: 2px solid #ff6666;
+      }
+    }
+
+    .rank_info {
+      display: flex;
+      flex-direction: column;
+
+      .ellipsis {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .rank_item {
+        display: flex;
+        justify-content: space-between;
+        padding: 4px 0;
+        line-height: 32px;
+        color: #9B9B9B;
+        font-size: 14px;
+
+        .info_num {
+          img {
+            height: 32px;
+            width: 32px;
+          }
+
+          .num {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            margin: 6px 6px 0;
+            text-align: center;
+            border-radius: 50%;
+            background: #E8E8E8;
+            color: #666;
+            font-weight: 600;
+            cursor: default;
+          }
+        }
+
+        .rank_display {
+          display: flex;
+          flex: 1;
+          justify-content: space-between;
+        }
+      }
+    }
+
+    .more_rank {
+      margin: auto;
+      width: 230px;
+      height: 30px;
+      line-height: 28px;
+      text-align: center;
+      color: #9b9b9b;
+      border: 1px solid #cdcdcd;
+      border-radius: 2px;
+      margin-top: 6px;
+      cursor: pointer;
+    }
+  }
 }

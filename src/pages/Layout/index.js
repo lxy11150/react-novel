@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Layout, Space, Input } from 'antd';
 import logo from '@/assets/logo.png'
-import './index.scss'
 import HeaderMenu from './components/headerMenu';
 import UserInfo from './components/userInfo';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fentchUserInfo } from '@/store/modules/user';
+import { fetchUserInfo } from '@/store/modules/user';
 import Scenery from './components/scenery';
 import classNames from 'classnames';
+import './index.scss'
 
 const { Header, Footer, Content } = Layout;
 const { Search } = Input;
@@ -17,12 +17,16 @@ const Layouts = () => {
   const dispatch = useDispatch()
   const username = useSelector(state => state.user.userInfo.username)
   const [isHeaderFixed, setIsHeaderFixed] = useState(false);
+  const navigate = useNavigate()
 
-  const onSearch = (value) => console.log(value);
+  const onSearch = (value) => {
+    console.log(value);
+    navigate(`/search?key=${value}`)
+  };
 
   //触发用户个人信息action
   useEffect(() => {
-    dispatch(fentchUserInfo())
+    dispatch(fetchUserInfo())
   }, [dispatch])
 
   useEffect(() => {

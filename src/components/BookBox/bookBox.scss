@@ -1,0 +1,138 @@
+.book_box {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  width: 401px;
+  height: 128px;
+  background-color: #f6f8fa;
+
+  .cursor {
+    cursor: pointer;
+  }
+
+  .cursor_default {
+    cursor: default;
+  }
+
+  .cursor:hover {
+    color: #e60000;
+  }
+
+  //多余部分省略
+  .ellipsis {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  //两行显示省略
+  .two_line_ellipsis {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 2; // 显示的行数
+  }
+
+  //封面背景
+  .book_frame {
+    height: 100%;
+    width: 100%;
+    background-image: url('../../assets/cover.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative; //防止底部阴影在上面
+    z-index: 5;
+  }
+
+  .global_radius {
+    border-radius: 4px !important;
+    overflow: hidden !important;
+  }
+
+  .book_img {
+    position: relative;
+    height: 128px;
+    width: 96px;
+    margin-right: 16px;
+    background-color: #fff;
+
+    .img_container {
+      height: 100%;
+      width: 100%;
+      box-shadow: inset 0 0 1px 0 rgba(0, 0, 0, .1);
+
+      img {
+        height: 100%;
+        width: 96px;
+        cursor: pointer;
+        -webkit-transition: all .1s ease-out !important;
+        transition: all .1s cubic-bezier(0, 0.21, 0.58, 1) !important;
+      }
+
+      img:hover {
+        scale: (1.1);
+      }
+    }
+  }
+
+  .img_container::before {
+    background-image: url('../../assets/download.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 4px 0 0 4px;
+    content: "";
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 13px;
+    z-index: 10;
+  }
+
+  .book_img::after {
+    background-color: #7b7e80;
+    bottom: 0;
+    content: "";
+    filter: blur(9px);
+    height: 10%;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 70%;
+  }
+}
+
+.book_info {
+  display: flex;
+  text-align: left;
+  flex: 1; //简写方式，用于设置 flex-grow、flex-shrink 和 flex-basis 的值
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden; //超出盒子部分的文字隐藏
+  padding: 6px 0;
+
+  .info_title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  .info_keywords {
+    color: #999;
+    font-size: 12px;
+    line-height: 20px;
+
+    span {
+      padding-right: 3px;
+    }
+  }
+
+  .info_profile {
+    color: #666;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+}

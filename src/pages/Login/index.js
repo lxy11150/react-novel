@@ -5,7 +5,7 @@ import LoginCard from '@/components/LoginCard'
 import './index.scss'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { fentchLogin } from '@/store/modules/user'
+import { fetchLogin } from '@/store/modules/user'
 
 const Login = () => {
   const navigate = useNavigate()
@@ -13,7 +13,7 @@ const Login = () => {
 
   const onFinish = async (values) => {
     //触发异步action fentchLogin
-    await dispatch(fentchLogin(JSON.stringify(values)))
+    await dispatch(fetchLogin(JSON.stringify(values)))
     //1. 跳转到首页
     navigate('/')
     //2. 提示一下用户

@@ -1,0 +1,190 @@
+.rank {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 12px;
+  margin: 40px auto 0;
+
+  .rank_nav {
+    border-radius: 12px;
+    height: 460px;
+    margin-right: 30px;
+    padding: 29px 24px 0;
+    width: 222px;
+    background-color: #fff;
+    box-shadow: 0 1px 9px 0 rgba(117, 170, 255, .26);
+
+    .rank_nav_scan {
+      display: flex;
+      font-size: 18px;
+      color: #e60000;
+
+      h3 {
+        margin: 0;
+        margin-left: 10px;
+        font-weight: 500;
+        font-family: PingFangSC, PingFangSC-Medium;
+        cursor: pointer;
+      }
+    }
+
+    .line {
+      margin-top: 15px;
+      border: 2px solid rgba(232, 149, 175, 0.3);
+    }
+
+    .rank_nav_list {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+
+      .list_title {
+        color: #333;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 36px;
+        margin-bottom: 6px;
+        padding-top: 15px;
+      }
+    }
+  }
+
+  .rank_content_default {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 948px;
+    border-radius: 12px;
+
+    .rank_info {
+      box-shadow: 0 2px 11px 0 rgba(74, 112, 183, .21);
+      margin-bottom: 30px;
+    }
+  }
+
+  .rank_content {
+    background: #fff;
+    border-radius: 12px;
+    width: 948px;
+    box-shadow: 0 2px 11px 0 rgba(74, 112, 183, .21);
+
+    .rank_content_head {
+      height: 155px;
+      position: relative;
+      z-index: 10;
+
+      img {
+        position: absolute;
+        height: 155px;
+        width: 100%;
+        left: 0;
+        top: 0;
+      }
+    }
+
+    .rank_content_body {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin-top: -31px;
+      padding: 0 48px 0 40px;
+      z-index: 20;
+
+      .info_title:hover,
+      .info_profile:hover {
+        cursor: pointer !important;
+        color: #e60000 !important;
+      }
+
+      .rank_content_body_item {
+        display: flex;
+        justify-content: space-between;
+
+        .info_num {
+          img {
+            height: 40px;
+            width: 40px;
+          }
+
+          .num {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            line-height: 20px;
+            margin: 6px 6px 0;
+            text-align: center;
+            border-radius: 50%;
+            background: #E8E8E8;
+            font-weight: 600;
+            color: #666;
+            cursor: default;
+          }
+        }
+
+        .book_box {
+          flex: 1;
+          padding-inline: 30px;
+          background-color: #fff;
+
+          .info_title {
+            color: #333;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 26px;
+            text-align: left;
+          }
+
+          .info_profile {
+            font-size: 14px;
+            line-height: 22px;
+          }
+        }
+
+        .rank_item_btn {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          padding: 12px 0 20px;
+          text-align: center;
+
+          .btn_top_text {
+            span {
+              color: #d85f25;
+              font-family: DIN-Alternate;
+              font-size: 20px;
+            }
+
+            em {
+              color: #999;
+              font-size: 12px;
+              margin-left: 4px;
+            }
+          }
+
+          .btn_read {
+            width: 108px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 20px;
+            color: #fff;
+            background: linear-gradient(331deg, #e60000, #ff6114);
+            cursor: pointer;
+          }
+
+          .add_shelf {
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 14px;
+            color: #999;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .pagination {
+      margin: 40px 0;
+    }
+  }
+}

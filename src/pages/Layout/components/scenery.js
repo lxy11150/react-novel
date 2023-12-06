@@ -118,11 +118,15 @@ const Scenery = () => {
     window.addEventListener('resize', initItems);
 
     return () => {
-      // 清除事件监听
-      document.getElementById('app').removeEventListener('mouseenter', handleMouseEnter);
-      document.getElementById('app').removeEventListener('mousemove', handleMouseMove);
-      document.getElementById('app').removeEventListener('mouseleave', leave);
-      window.removeEventListener('resize', initItems);
+      try {
+        // 清除事件监听
+        document.getElementById('app').removeEventListener('mouseenter', handleMouseEnter);
+        document.getElementById('app').removeEventListener('mousemove', handleMouseMove);
+        document.getElementById('app').removeEventListener('mouseleave', leave);
+        window.removeEventListener('resize', initItems);
+      } catch {
+        console.error();
+      }
     };
   }, [allImagesData, layers, moveX]); // 添加依赖项以防止不必要的重复监听
 

@@ -1,0 +1,76 @@
+.books {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 12px;
+  margin: 40px auto 0;
+
+  .books_nav {
+    border-radius: 12px;
+    margin-right: 23px;
+    padding: 32px 24px;
+    width: 263px;
+    height: 730px;
+    border: 2px dashed orange;
+    background-color: #fff;
+
+    .ant-tabs-tab-btn {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 26px;
+      padding-bottom: 12px;
+    }
+
+    .book_class,
+    .book_words,
+    .book_state {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .class_body {
+        .ant-radio-group {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+
+          .ant-radio-button-wrapper {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .nav_content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    border-radius: 12px;
+    padding: 24px 32px 40px;
+    width: 914px;
+    border: 2px dashed powderblue;
+    background-color: #fff;
+    box-shadow: 0 1px 9px 0 rgba(117, 170, 255, .26);
+
+    .ant-tabs-tab-btn {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 40px;
+      color: #666;
+    }
+
+    .ant-tabs-tabpane {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      .book_box {
+        background-color: #fff;
+      }
+    }
+
+    .pagination {
+      margin-top: 40px;
+    }
+  }
+}

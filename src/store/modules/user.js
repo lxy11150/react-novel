@@ -36,7 +36,7 @@ const { setToken, setUserInfo, clearUserInfo } = userStore.actions
 const userReducer = userStore.reducer
 
 //异步方法，完成登录获取token
-const fentchLogin = (loginForm) => {
+const fetchLogin = (loginForm) => {
   return async (dispatch) => {
     //1. 发送异步请求
     const res = await loginAPI(loginForm)
@@ -46,7 +46,7 @@ const fentchLogin = (loginForm) => {
 }
 
 //异步方法，完成登录获取个人用户信息
-const fentchUserInfo = () => {
+const fetchUserInfo = () => {
   return async (dispatch) => {
     //1. 发送异步请求
     const res = await userInfoAPI()
@@ -56,7 +56,7 @@ const fentchUserInfo = () => {
 }
 
 //以按需导出的方式导出actionCreater
-export { fentchLogin, fentchUserInfo, clearUserInfo, setToken }
+export { fetchLogin, fetchUserInfo, clearUserInfo, setToken }
 
 //以默认导出的方式导出reducer
 export default userReducer
