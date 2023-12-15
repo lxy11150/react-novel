@@ -1,9 +1,7 @@
 <?php
 include '../mysqli.php';
 include '../global.php';
-require __DIR__ . '/../vendor/autoload.php';
-
-use \Firebase\JWT\JWT;
+include '../token.php';
 
 $conn = connectDatabase();
 
@@ -16,7 +14,7 @@ if (isset($headers['Authorization'])) {
 }
 
 // 检查是否提供了令牌
-if ($token) {
+if ($token && verifyToken($token)) {
     try {
         // 获取请求参数
         $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
@@ -119,11 +117,30 @@ if ($token) {
         $stmt->execute();
         $result = $stmt->get_result();
 
+        // 遍历分页数据结果集，获取每个小说的 collect 属性
+        $rows = $result->fetch_all(MYSQLI_ASSOC);
+        foreach ($rows as &$row) {
+            $novelId = $row['id'];
+        
+            // 查询 rank 表获取 collect 属性
+            $collectQuery = $conn->prepare("SELECT collect FROM `rank` WHERE id = ?");
+            $collectQuery->bind_param("i", $novelId);
+            $collectQuery->execute();
+            $collectResult = $collectQuery->get_result();
+            $collectData = $collectResult->fetch_assoc();
+        
+            // 将 collect 加入到当前小说的数据中
+            $row['collect'] = $collectData ? $collectData['collect'] : null;
+        
+            // 关闭 collect 查询
+            $collectQuery->close();
+        }
+
         // 构建返回数据结构
         $response = [
             "code" => 200,
             "data" => [
-                "rows" => $result->fetch_all(MYSQLI_ASSOC),
+                "rows" => $rows,
                 "total" => $total
             ],
             "msg" => "小说分页数据"

@@ -2,9 +2,6 @@
 include '../mysqli.php';
 include '../global.php';
 include '../token.php';
-require __DIR__ . '/../vendor/autoload.php';
-
-use \Firebase\JWT\JWT;
 
 $conn = connectDatabase();
 

@@ -1,9 +1,7 @@
 <?php
 include '../mysqli.php';
 include '../global.php';
-require __DIR__ . '/../vendor/autoload.php'; // 引入 Firebase JWT 库
-
-use \Firebase\JWT\JWT;
+include '../token.php';
 
 $conn = connectDatabase();
 
@@ -16,7 +14,7 @@ if (isset($headers['Authorization'])) {
 }
 
 // 检查是否提供了令牌
-if ($token) {
+if ($token && verifyToken($token)) {
     try {
         // 获取小说列表信息
         $stmt = $conn->prepare("SELECT * FROM novels WHERE id < 375 ORDER BY RAND() LIMIT 5");

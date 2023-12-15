@@ -1,8 +1,11 @@
 {
-  "config": {
-    "disable-tls": true
-  },
-  "require": {
-    "firebase/php-jwt": "^5.4"
-  }
+    "config": {
+        "disable-tls": true,
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    },
+    "require": {
+        "firebase/php-jwt": "^5.4"
+    }
 }

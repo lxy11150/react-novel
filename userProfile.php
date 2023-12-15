@@ -1,7 +1,7 @@
 <?php
 include './mysqli.php';
 include './global.php';
-require __DIR__ . '/vendor/autoload.php'; // 引入 Firebase JWT 库
+require 'vendor/autoload.php'; // 引入 Firebase JWT 库
 
 use \Firebase\JWT\JWT;
 
