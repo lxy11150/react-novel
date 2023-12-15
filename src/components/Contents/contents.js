@@ -1,7 +1,20 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import './contents.scss'
 
-const Contents = ({ chapterList, id }) => {
+const Contents = ({ chapterList, id, target }) => {
+  const navigate = useNavigate()
+
+  const handleReload = (index) => {
+    if (target === '_blank') {
+      window.open(`/chapter/${id}/${index}`, '_blank')
+    } else {
+      navigate(`/chapter/${id}/${index}`)
+      window.location.reload()
+      window.scrollTo(0, 100)
+    }
+  }
+
   return (
     <div className="contents">
       <div className="chapter_list_title">
@@ -12,7 +25,7 @@ const Contents = ({ chapterList, id }) => {
         <ul>
           {chapterList?.map((item, index) => (
             <li key={index}>
-              <Link to={`/chapter/${id}/${index}`} target='_blank'>{item}</Link>
+              <Link onClick={() => handleReload(index)}>{item}</Link>
             </li>
           ))}
         </ul>

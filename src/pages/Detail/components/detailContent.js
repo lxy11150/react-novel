@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Card } from 'antd';
 import ArticleIntroduce from "./articleIntroduce";
-import Contents from "./Contents";
+import Contents from "@/components/Contents/contents";
 import { useEffect } from "react";
+import Forum from "./forum";
 
 const tabListNoTitle = [
   {
@@ -29,8 +30,8 @@ const DetailContent = ({ chapterList, profile, chapterInfo, id }) => {
       content={chapterInfo}
       id={id}
     />,
-    contents: <Contents chapterList={chapterList} id={id} />,
-    forum: <p>project content</p>,
+    contents: <Contents chapterList={chapterList} id={id} target={'_blank'} />,
+    forum: <Forum />,
   };
 
   const onTab2Change = (key) => {

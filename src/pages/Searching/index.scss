@@ -1,3 +1,47 @@
 .search {
-  
+  margin-top: 60px;
+
+  .search_card {
+    margin-bottom: 60px;
+
+    .ant-card-head {
+      margin-top: 16px;
+      padding-inline: 48px;
+      height: 48px;
+      line-height: 48px;
+
+      .ant-tabs-tab-btn {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 400;
+        color: #666;
+      }
+    }
+
+    .ant-card-body {
+      padding: 24px 48px;
+
+      .search_novel {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        width: 738px;
+
+        .search_tips {
+          font-size: 14px;
+          font-weight: 400;
+          color: #999;
+          line-height: 22px;
+
+          span {
+            color: #e60000;
+          }
+        }
+      }
+    }
+
+    .pagination {
+      margin-top: 48px;
+    }
+  }
 }

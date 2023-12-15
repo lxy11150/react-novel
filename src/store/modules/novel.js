@@ -38,6 +38,7 @@ const fetchNovelRandom = () => {
 const fetchNovelPage = (params) => {
   return async (dispatch) => {
     const res = await novelPageAPI(params)
+    console.log(res.data);
     if (res.data.code === 200) {
       dispatch(setnovelPage(res.data.data.rows))
       dispatch(setpageTotal(res.data.data.total))

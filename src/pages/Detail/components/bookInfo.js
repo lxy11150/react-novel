@@ -1,8 +1,15 @@
-import CloudRainAnimation from '@/components/CloudRainAnimation'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const BookInfo = ({ novelInfo, chapter, index, id }) => {
+const BookInfo = ({
+  novelInfo,
+  chapter,
+  index,
+  id,
+  handleShelf,
+  handleRecommend,
+  isExist,
+  isRecommend }) => {
   return (
     <div className="book_information">
       {/* 图片模块 */}
@@ -50,9 +57,24 @@ const BookInfo = ({ novelInfo, chapter, index, id }) => {
           <div className="btn_read" onClick={() => window.open(`/chapter/${id}/0`, '_blank')}>
             立即阅读
           </div>
-          <div className="add_shelf">
-            加入书架
-          </div>
+          {isExist ? (
+            <div className="add_shelf">
+              已在书架
+            </div>
+          ) : (
+            <div className="add_shelf pointer" onClick={handleShelf}>
+              加入书架
+            </div>
+          )}
+          {isRecommend ? (
+            <div className="add_shelf">
+              已推荐
+            </div>
+          ) : (
+            <div className="add_shelf pointer" onClick={handleRecommend}>
+              推荐
+            </div>
+          )}
         </div>
       </div>
     </div >

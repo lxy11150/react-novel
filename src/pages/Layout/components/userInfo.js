@@ -11,7 +11,7 @@ const UserInfo = ({ username }) => {
 
   const confirm = () => {
     dispatch(clearUserInfo())
-    sessionStorage.clear()
+    sessionStorage.clear() //清空会话存储空间
     navigate('/login')
     message.success('你已退出登录');
   }
@@ -35,11 +35,14 @@ const UserInfo = ({ username }) => {
       }}
     >
       <Link
+        to={'/userCenter/home'}
         style={style}
         onMouseEnter={(e) => e.target.style.backgroundColor = '#e2e2e2'}
         onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
       ><UserOutlined style={icon} />个人中心</Link>
-      <Link style={style}
+      <Link
+        to={'/userCenter/update'}
+        style={style}
         onMouseEnter={(e) => e.target.style.backgroundColor = '#e2e2e2'}
         onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
       ><ToolOutlined style={icon} />账号设置</Link>

@@ -30,7 +30,7 @@ axios.interceptors.response.use((response) => {
   //超出2xx 范围内的状态码都会触发该函数
 
   // 监控401 token失效
-  if (error.response.status === 401) {
+  if (error.response.code === 401) {
     removeToken()
     router.navigate('/login')
     window.location.reload()

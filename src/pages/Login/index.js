@@ -16,8 +16,6 @@ const Login = () => {
     await dispatch(fetchLogin(JSON.stringify(values)))
     //1. 跳转到首页
     navigate('/')
-    //2. 提示一下用户
-    message.success('登录成功')
   }
 
   return (

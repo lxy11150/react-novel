@@ -1,0 +1,74 @@
+.comments_list_item {
+  display: flex;
+  margin-bottom: 65px;
+
+  .ellipsis {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .item_info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 20px;
+
+    .item_info_user {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 15px;
+      font-family: PingFang SC, HarmonyOS_Sans_TC_Regular, Microsoft YaHei, sans-serif;
+      color: #666;
+    }
+
+    .item_info_comments {
+      display: flex;
+      font-family: PingFang SC, HarmonyOS_Sans_TC_Regular, Microsoft YaHei, sans-serif;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      font-size: 15px;
+      align-items: center;
+      line-height: 24px;
+      margin-bottom: 8px;
+    }
+
+    .item_info_from {
+      color: #666;
+      font-size: 14px;
+      line-height: 22px;
+
+      i {
+        font-weight: 400;
+        margin-right: 4px;
+        font-style: normal;
+      }
+
+      a {
+        color: #999;
+      }
+    }
+
+    .item_info_other {
+      display: flex;
+      justify-content: space-between;
+      color: #999;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px;
+      margin-top: 32px;
+
+      .other_icon {
+        display: flex;
+
+        .icon_like,
+        .icon_dislike {
+          padding-right: 16px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

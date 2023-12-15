@@ -9,6 +9,7 @@ function AuthRoute({ children }) {
   if (token) {
     return <>{children}</>
   } else {
+    sessionStorage.clear()
     return <Navigate to={'/login'} replace />
   }
 }

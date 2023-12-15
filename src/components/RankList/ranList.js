@@ -10,8 +10,6 @@ const RankList = ({ rank, img }) => {
     setActivate(index)
   }
 
-  console.log(rank);
-
   return (
     <div className="rank_list" style={{ backgroundImage: `url(${img})` }}>
       {rank?.map((item, index) => (

@@ -14,11 +14,11 @@ const items = [
     key: '/rank',
     icon: <BarChartOutlined />,
   },
-  {
-    label: '书吧',
-    key: '/forum',
-    icon: <CommentOutlined />,
-  },
+  // {
+  //   label: '书吧',
+  //   key: '/forum',
+  //   icon: <CommentOutlined />,
+  // },
   {
     label: '书库',
     key: '/books',
@@ -35,6 +35,7 @@ const HeaderMenu = () => {
     setCurrent(e.key)
     removeSession('book')
     navigate(e.key)
+    removeSession('detail')
   }
 
   useEffect(() => {

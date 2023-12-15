@@ -20,9 +20,8 @@ const Layouts = () => {
   const navigate = useNavigate()
 
   const onSearch = (value) => {
-    console.log(value);
     navigate(`/search?key=${value}`)
-  };
+  }
 
   //触发用户个人信息action
   useEffect(() => {

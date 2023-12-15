@@ -1,0 +1,33 @@
+.forum_post {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  border-bottom: 1px dashed #d0d3d6;
+
+  .form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .ant-btn {
+      width: 70px;
+      height: 40px;
+      margin-right: 40px;
+      background-color: #80DAF6;
+      vertical-align: middle;
+    }
+
+    .ant-btn:hover {
+      background-color: #00AEEC;
+    }
+  }
+
+  .ant-form-item-control-input-content {
+    display: flex;
+    justify-content: space-between;
+
+    .anticon-meh {
+      font-size: 20px;
+    }
+  }
+}

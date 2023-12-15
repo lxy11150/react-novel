@@ -28,3 +28,21 @@ export function userInfoAPI() {
     method: 'GET'
   })
 }
+
+//4. 更新用户的基本信息
+export function updateUserAPI(formData) {
+  return request({
+    url: 'user/update.php',
+    method: 'PUT',
+    data: formData
+  })
+}
+
+//5. 修改用户的密码
+export function updatePasswordAPI(formData) {
+  return request({
+    url: 'user/password.php',
+    method: 'PUT',
+    data: formData
+  })
+}

@@ -10,6 +10,7 @@ import Register from '@/pages/Register'
 import Detail from '@/pages/Detail'
 import Chapter from '@/pages/Chapter'
 import Searching from '@/pages/Searching'
+import UserCenter from '@/pages/UserCenter'
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: '/search',
         element: <Searching />
+      },
+      {
+        path: '/userCenter/:key',
+        element: <UserCenter />
       }
     ]
   },

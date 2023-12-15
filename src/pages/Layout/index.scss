@@ -1,5 +1,4 @@
 .layout {
-  height: 1000px;
 
   //头部动画样式
   #app {
@@ -48,6 +47,7 @@
       line-height: 60px;
       background-color: #f5f5f5;
       z-index: 999;
+      box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
 
       .logo {
         height: 48px;

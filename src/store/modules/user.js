@@ -3,6 +3,8 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { loginAPI, userInfoAPI } from "@/apis/user"
 import { getToken, setToken as _setToken, removeToken } from '@/utils'
+import router from "@/router"
+import { message } from "antd"
 
 const userStore = createSlice({
   name: 'user',
@@ -40,8 +42,12 @@ const fetchLogin = (loginForm) => {
   return async (dispatch) => {
     //1. 发送异步请求
     const res = await loginAPI(loginForm)
-    //2. 提交同步action进行token的存入
-    dispatch(setToken(res.data.data))
+    if (res.data.code === 200) {
+      //2. 提交同步action进行token的存入
+      dispatch(setToken(res.data.data))
+    } else {
+      message.warning(res.data.message)
+    }
   }
 }
 
@@ -50,8 +56,13 @@ const fetchUserInfo = () => {
   return async (dispatch) => {
     //1. 发送异步请求
     const res = await userInfoAPI()
-    //2. 提交同步action进行token的存入
-    dispatch(setUserInfo(res.data.data))
+    if (res.data.code === 200) {
+      //2. 提交同步action进行token的存入
+      dispatch(setUserInfo(res.data.data))
+    } else {
+      router.navigate('/login')
+      message.success("请重新登录！")
+    }
   }
 }
 

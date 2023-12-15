@@ -3,10 +3,11 @@ import { Tabs, Pagination, ConfigProvider } from 'antd';
 import zh_CN from 'antd/es/locale/zh_CN';
 import BookBox from '@/components/BookBox/bookBox';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchNovelPage } from '@/store/modules/novel';
+import { fetchNovelPage, setnovelPage } from '@/store/modules/novel';
 import BookClass from './components/bookClass';
-import './index.scss'
 import { getSession, setSession } from '@/utils';
+import _ from 'lodash'
+import './index.scss'
 
 const labels = {
   1: '热度最高',
@@ -95,7 +96,7 @@ const Books = () => {
   //获取变化后页面书籍数据
   const handlePage = (page, pageSize) => {
     const value = { ...getSession('book'), page: page, pageSize: pageSize }
-    setBook(value)
+    setBook(value) //分页所必须的存储
     setSession('book', value)
     dispatch(fetchNovelPage(value))
   }
@@ -109,7 +110,23 @@ const Books = () => {
   }
 
   const onChange = (key) => {
-    console.log(key);
+    console.log(novelPage);
+    switch (key) {
+      case '1':
+        dispatch(setnovelPage(_.orderBy(novelPage, 'id')))
+        break
+      case '2':
+        console.log(1);
+        const sortNovelList = _.orderBy(novelPage, (novel) => {
+          // 将 words 转换为统一的单位，例如全部转换为字
+          const words = novel.words.endsWith('万字') ? parseFloat(novel.words) * 10000 : parseFloat(novel.words);
+          return words;
+        }, ['desc']);
+        dispatch(setnovelPage(sortNovelList))
+        break
+      case '3':
+        dispatch(setnovelPage(_.orderBy(novelPage, 'collect')))
+    }
   }
 
   useEffect(() => {
@@ -139,6 +156,8 @@ const Books = () => {
         <ConfigProvider locale={zh_CN}>
           <Pagination
             total={total}
+            current={book.page ? book.page : 1}
+            pageSize={book.pageSize ? book.pageSize : 10}
             showSizeChanger
             showQuickJumper
             showTotal={(total) => `共 ${total} 条`}
